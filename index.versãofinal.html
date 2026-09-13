@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        header {
+         background-image: url(https://t3.ftcdn.net/jpg/16/58/03/06/360_F_1658030643_dlJUWiM1H0122okA1WXge0vXE0FnFQob.jpg);
+         background-size: cover;
+         background-position: center;
+         background-repeat: no-repeat;
+         color: rgb(255, 255, 255);
+         text-align: center;
+         padding: 120px;
+        }
+        header h1 {
+            font-size: 60px;
+        }
+        header h5 {
+            font-size: 50px;
+        }
+        .navbar {
+            display: flex;
+            background-color: #626369;
+            padding: 15px;
+           justify-content: center;
+            gap: 15px;
+            flex-direction: row; 
+        }
+
+        .navbar > div {
+          position: relative;
+          width: auto;
+          min-width: 140px;
+          text-align: center;
+          background-color: #4ab450;
+          border: 2px solid #00ffaa;
+          border-radius: 8px;
+          padding: 10px 15px;
+          transition: backgraund-color 0.3;
+          cursor: pointer;
+        }
+        .navbar > div:hover {
+            background-color: #00ffaa;
+        }
+        .navbar > div > a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .navbar > div:hover > a {
+            color: #222;
+        }
+        .navbar > div > a::after {
+            content: '▼';
+            font-size: 12px;
+        }
+        .dropdown-opcoes {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: -2px;
+            background-color: #333;
+            min-width: 100%;
+            width: max-content;
+            border: 2px solid #00ffaa;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            flex-direction: column;
+            z-index: 10;
+        }
+        .navbar > div:hover .dropdown-opcoes {
+            display: flex;
+        }
+        .dropdown-opcoes a{
+            padding: 12px 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            text-align: left;
+            border-bottom: 1px solid #555;
+        }
+        .dropdown-opcoes a:last-child {
+            border-bottom: none;
+        }
+        .dropdown-opcoes a:hover {
+            background-color: #555;
+            color: #00ffaa;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+
+        }
+        .container div {       
+            text-align: start;
+            padding: 100px;
+            font-size: 30px;
+        } 
+        .container2 {
+            background-color: aliceblue;
+            flex: 1.5;
+        }
+        .container2 h3 {
+            border-bottom: 3px solid #00ffaa;
+            padding-bottom: 10px;
+            color: #333;
+            margin-top: 0;
+        }
+        .container2 p {
+            margin-bottom: 20px;
+            line-height: 1.5;
+            color: #444;
+            font-size: 40px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 20px;
+        }
+        .slide-right {
+            border-bottom: 3px solid #00ffaa;
+            padding-bottom: 10px;
+            color: #333;
+        }
+        .lista-decorada {
+            padding-left: 25px;
+        }
+        .lista-decorada li {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #626369;
+        }
+        .lista-decorada a {
+            text-decoration: none;
+            color: #222;
+            font-weight: bold;
+            transition: color 0.2;
+        }
+        .lista-decorada a:hover {
+            color: #00ffaa;
+            text-decoration: underline
+        }
+        .slide-right {
+            background-color: #f4f4f4;
+            flex: 1;
+            border: 2px solid #626369;
+            border-radius: 8px;
+        }
+        .slide-right h3 {
+            border-bottom: 3px solid #00ffaa;
+            padding-bottom: 10px;
+            color: #333;
+        }
+        .lista-decorada {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .lista-decorada li {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #626369;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #ffffff;
+        }
+        .lista-decorada a {
+            text-decoration: none;
+            color: #222;
+            font-weight: bold;
+            transition: color 0.2;
+        }
+        .lista-decorada  a:hover {
+            caret-color: #00ffaa;
+            text-decoration: underline;
+        }
+        @media (max-width: 700px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar div {
+                width: 100%;
+            }
+            .container {
+                flex-direction: column;
+            }
+            .container div {
+                padding: 30px;
+            }
+        }
+    </style>
+    <title>Trabalho de tecnologia web</title>
+</head>
+<body>
+    <header>
+        <h1>Noticias de games da Semana</h1>
+        <h5>Site para publicar noticias sobre video game!</h5>
+    </header>
+    <div class="navbar">
+        <div><a href="https://br.ign.com/hideo-kojima/156017/passamos-os-ultimos-3-meses-procurando-um-novo-parceiro-playstation-cancela-physint-novo-jogo-de-hid">Noticia 1</a></div>
+        <div><a href="https://br.ign.com/grand-theft-auto-vi/155939/gta-6-e-tao-realista-que-a-rockstar-teve-de-descartar-um-sistema-exagerado-demais-felizmente">Noticia 2</a></div>
+        <div><a href="https://ac3949.mannesoftprime.com.br/webaluno/">Web Aluno!</a></div>
+        <div><a href="https://ac3949.mannesoftprime.com.br/webaluno/">Web Aluno!</a></div>
+    </div>
+    <div class="container">
+            <div class="container2">
+        <h3>Destaques Rápidos</h3>
+        <p><strong>PS5 Pro a caminho?</strong><br>
+        Rumores apontam para um anúncio oficial da Sony nas próximas semanas.</p>
+        <p><strong>Febre Indie:</strong><br>
+        O novo jogo de sobrevivência da Steam foi desenvolvido por apenas duas pesssoas e já ultrapassou a marca de 1 milhão de jogadores silmultâneoas no fim de semana.</p>
+        <p><strong>Drivers NVIDIA:</strong><br>
+        A nova atualização do Game Ready Driver já está disponível, focada em otimizar os grandes lançamentos e corrigir engasgos em resoluções 4K.</p>
+        <p><strong>Promoção da Semana:</strong><br>
+        Lojas digitais estão com descontos de até 75% em franquias de RPG clássicas.</p>
+    </div>
+        <div><h2>"Passamos os últimos 3 meses procurando um novo parceiro": PlayStation cancela Physint, novo jogo de Hideo Kojima, mas projeto já tem uma nova casa logo ao lado</h2>
+            <h4>“Os criadores têm a liberdade de escolher onde e como dar vida às suas ideias”</h4>
+            <h6>Atualizado: 10 de Setembro de 2026 às 08:45</h6>
+            <img src="https://sm.ign.com/t/ign_br/news/h/hideo-koji/hideo-kojimas-metal-gear-solid-spiritual-successor-physint-w_527j.1280.jpg" alt="Hideo Kojima" width="1200">
+            <p>O próximo projeto do renomado diretor Hideo Kojima, Physint, agora será lançado pelo Xbox em vez da Sony, conforme anunciou a Microsoft.</p>
+            <img src="https://sm.ign.com/t/ign_br/screenshot/default/blob_3p2j.960.png" alt="XBOX e PLAYSTATION" width="500">
+            <P>O Xbox continuará com a distribuição de OD, jogo de terror de Kojima, e essa parceria se expandirá além desses dois projetos de jogos para incluir cinema e televisão.</P>
+            <P>“Isso amplia nossa relação com o Xbox além de OD. À medida que avançamos no desenvolvimento de Physint, continuamos comprometidos em redefinir o gênero de ação e espionagem para jogadores em todo o mundo”, disse Kojima.</P>
+            <h2>GTA 6 é tão realista que a Rockstar teve de descartar um sistema exagerado demais</h2>
+            <h6>Atualizado: 4 de Setembro de 2026 às 16:01</h6>
+            <p>Em comparação com os títulos anteriores da série, a Rockstar Games está dando uma ênfase cada vez maior ao realismo em GTA 6, permitindo-nos explorar um mundo aberto incrivelmente interativo e vibrante.</p>
+            <img src="https://sm.ign.com/t/ign_br/screenshot/default/gta-6-6437244_3k16.960.png" alt="Imagem dos prottagonistas de GTA6" width="1200">
+            <p>Por exemplo, os NPCs reagem ao nosso comportamento ou às nossas roupas, e os carros precisam ser abastecidos ou recarregados — e, se dependesse da Rockstar, teríamos até de fazer compras regularmente para abastecer a geladeira. É sério.</p>
+            <p>Rob Nelson, codiretor do estúdio Rockstar North, revelou isso recentemente em uma entrevista à revista japonesa Famitsu (via GamesRadar+).</p>
+            <p>Em certo momento do desenvolvimento, experimentamos um sistema que permitia comprar mantimentos para reabastecer a geladeira [...]. Tínhamos especificações para lojas que vendiam alimentos que você podia comprar e levar para casa, permitindo assim o reabastecimento da geladeira.</p>
+            <p>No final das contas, porém, a Rockstar Games decidiu descartar o recurso da geladeira. "Como isso teria complicado as mecânicas do jogo, tivemos que simplificar o sistema", explica Nelson.</p>
+        </div>
+        
+        <div class="side-right">
+            <h3>Mais Lidas da Semana</h3>
+            <ol class="lista-decorada">
+                <li><a href="#">Physint e a parceria com XBOX</a></li>
+                <li><a href="#">Detalhes de bastidores de GTA 6</a></li>
+                <li><a href="#">Calendário de lançamentos de 2026</a></li>
+                <li><a href="#">Guia de hardware para novos jogos</a></li>
+            </ol>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 Noticias de Games</p>
+    </footer>
+</body>
+</html>
